@@ -1,0 +1,154 @@
+[
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable_backgrnd_welcome_page.xml.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/backgrnd_welcome_page.xml"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable_fred_reg_01.png.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/fred_reg_01.png"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable_ic_baseline_deblur_24.xml.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/ic_baseline_deblur_24.xml"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable_fred_01.png.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/fred_01.png"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable_pngwing_com.png.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/pngwing_com.png"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable_pngwing_com__4_.png.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/pngwing_com__4_.png"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/layout_registration_page.xml.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/layout/registration_page.xml"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable_login_button_border.xml.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/login_button_border.xml"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable_pngwing_com__6_.png.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/pngwing_com__6_.png"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-pngs-24:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable_fred_03.png.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/fred_03.png"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable_pngwing_com__3_.png.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/pngwing_com__3_.png"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable__880x5790.xml.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/_880x5790.xml"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable_ic_launcher_background.xml.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/layout_welcome_page.xml.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/layout/welcome_page.xml"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable_pngwing_com__2_.png.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/pngwing_com__2_.png"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/layout_selectusertype_popup.xml.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/layout/selectusertype_popup.xml"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable_pngwing_com__5_.png.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/pngwing_com__5_.png"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable_registration_button_border.xml.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/registration_button_border.xml"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/font_roboto_light.xml.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/font/roboto_light.xml"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable-v24_registration_button_border_white.xml.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable-v24/registration_button_border_white.xml"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable_pngwing_com__1_.png.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/pngwing_com__1_.png"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.android_app-merged_res-29:/layout_welcome_page.xml.flat",
+        "source": "com.example.android_app-main-31:/layout/welcome_page.xml"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable_fred_02.png.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/fred_02.png"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/xml_backup_rules.xml.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/xml_data_extraction_rules.xml.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/xml/data_extraction_rules.xml"
+    }
+]
