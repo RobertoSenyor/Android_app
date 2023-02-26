@@ -2830,7 +2830,7 @@ drawable tooltip_frame_light
 font roboto_light
 id ALT
 id AboutUsBtn
-id AcceptAuthTextView
+id AcceptAuthBtn
 id AcceptRegistrationImageView
 id AgainPasswordTextField
 id BOTTOM_END
@@ -2854,6 +2854,7 @@ id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
 id SocialPolicyBtn
+id SuccessRegistrationFrameLayout
 id TOP_END
 id TOP_START
 id URLTextField
@@ -3469,6 +3470,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout loginactivity_page
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -4940,3 +4942,4 @@ styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration
 styleable include constraintSet
 xml backup_rules
 xml data_extraction_rules
+xml network_security_config

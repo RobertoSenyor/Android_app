@@ -1,4 +1,4 @@
-#Sun Feb 26 11:38:11 NOVT 2023
+#Sun Feb 26 22:14:13 NOVT 2023
 base.2=/home/romanus/НГТУ/Android_app/app/build/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
 path.2=1/classes.dex
 base.1=/home/romanus/НГТУ/Android_app/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex

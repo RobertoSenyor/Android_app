@@ -35,7 +35,7 @@ drawable registration_button_border
 drawable registration_button_border_white
 font roboto_light
 id AboutUsBtn
-id AcceptAuthTextView
+id AcceptAuthBtn
 id AcceptRegistrationImageView
 id AgainPasswordTextField
 id EMailTextField
@@ -48,6 +48,7 @@ id RegistarationBtn
 id RegistrationBackgrnd
 id RegistrationFred
 id SocialPolicyBtn
+id SuccessRegistrationFrameLayout
 id URLTextField
 id image_fred1
 id image_fred2
@@ -62,6 +63,7 @@ id textView6
 id textView7
 id textView8
 id textView9
+layout loginactivity_page
 layout registration_page
 layout welcome_page
 mipmap ic_launcher
@@ -71,3 +73,4 @@ style Theme.Android_app
 style Theme.PlayMate
 xml backup_rules
 xml data_extraction_rules
+xml network_security_config

@@ -2829,7 +2829,7 @@ int drawable tooltip_frame_light 0x7f0800ef
 int font roboto_light 0x7f090000
 int id ALT 0x7f0a0000
 int id AboutUsBtn 0x7f0a0001
-int id AcceptAuthTextView 0x7f0a0002
+int id AcceptAuthBtn 0x7f0a0208
 int id AcceptRegistrationImageView 0x7f0a0003
 int id AgainPasswordTextField 0x7f0a0004
 int id BOTTOM_END 0x7f0a0005
@@ -2853,6 +2853,7 @@ int id SHOW_PATH 0x7f0a0016
 int id SHOW_PROGRESS 0x7f0a0017
 int id SYM 0x7f0a0018
 int id SocialPolicyBtn 0x7f0a0019
+int id SuccessRegistrationFrameLayout 0x7f0a0207
 int id TOP_END 0x7f0a001a
 int id TOP_START 0x7f0a001b
 int id URLTextField 0x7f0a001c
@@ -3468,6 +3469,7 @@ int layout design_navigation_menu 0x7f0d0028
 int layout design_navigation_menu_item 0x7f0d0029
 int layout design_text_input_end_icon 0x7f0d002a
 int layout design_text_input_start_icon 0x7f0d002b
+int layout loginactivity_page 0x7f0d006c
 int layout m3_alert_dialog 0x7f0d002c
 int layout m3_alert_dialog_actions 0x7f0d002d
 int layout m3_alert_dialog_title 0x7f0d002e
@@ -6825,3 +6827,4 @@ int[] styleable include { 0x7f040110 }
 int styleable include_constraintSet 0
 int xml backup_rules 0x7f140000
 int xml data_extraction_rules 0x7f140001
+int xml network_security_config 0x7f140002
