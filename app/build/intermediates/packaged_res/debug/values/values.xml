@@ -15,6 +15,7 @@
         </item>
     </string-array>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/bitter</item>
         <item>@font/roboto_light</item>
     </array>
     <color name="background">#001220</color>

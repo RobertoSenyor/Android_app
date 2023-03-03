@@ -2827,11 +2827,10 @@ drawable registration_button_border_white
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+font bitter
 font roboto_light
 id ALT
 id AboutUsBtn
-id AcceptAuthBtn
-id AcceptRegistrationImageView
 id AgainPasswordTextField
 id BOTTOM_END
 id BOTTOM_START
@@ -2840,11 +2839,13 @@ id EMailTextField
 id ExistAccountBtn
 id FUNCTION
 id InPageRegistrationBtn
+id InfoRegPagetextView
 id LoginBtn
 id META
 id NO_DEBUG
 id NicknameTextField
 id PasswordTextField
+id RegPagetextView
 id RegistarationBtn
 id RegistrationBackgrnd
 id RegistrationFred
@@ -2854,7 +2855,6 @@ id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
 id SocialPolicyBtn
-id SuccessRegistrationFrameLayout
 id TOP_END
 id TOP_START
 id URLTextField
@@ -4942,4 +4942,3 @@ styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration
 styleable include constraintSet
 xml backup_rules
 xml data_extraction_rules
-xml network_security_config

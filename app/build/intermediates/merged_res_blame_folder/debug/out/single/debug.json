@@ -4,12 +4,12 @@
         "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/backgrnd_welcome_page.xml"
     },
     {
-        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/mipmap-mdpi/ic_launcher.webp"
-    },
-    {
         "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable_fred_reg_01.png.flat",
         "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/fred_reg_01.png"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/mipmap-mdpi/ic_launcher.webp"
     },
     {
         "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable_ic_baseline_deblur_24.xml.flat",
@@ -48,12 +48,12 @@
         "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable_login_button_border.xml.flat",
-        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/login_button_border.xml"
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/font_bitter.xml.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/font/bitter.xml"
     },
     {
-        "merged": "com.example.android_app-merged_res-29:/layout_loginactivity_page.xml.flat",
-        "source": "com.example.android_app-main-31:/layout/loginactivity_page.xml"
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/drawable_login_button_border.xml.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-31:/drawable/login_button_border.xml"
     },
     {
         "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-29:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
