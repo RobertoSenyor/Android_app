@@ -1,4 +1,4 @@
-package com.example.android_app;
+package com.example.android_app.HTTPInteraction;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -10,7 +10,7 @@ import java.net.URL;
 public class ClientHTTPRequests {
 
     // TODO - поменять URL
-    public static final String hostname = "192.168.43.206:5000";
+    public static final String hostname = "https://trifonovalex2001.fvds.ru/api_stub";
 
     /**
      * Функция возвращает true\false если пользователь с этим именем (_Username)
@@ -21,7 +21,7 @@ public class ClientHTTPRequests {
      */
     public static boolean sendGetRequest_isExistUsername(String _Username) {
 
-        String urlRequest = "http://" + hostname + "/User/exist_username?username=" + _Username;
+        String urlRequest = hostname+"/User/exist_username?username=" + _Username;
 
         try {
             URL url = new URL(urlRequest);
@@ -55,19 +55,21 @@ public class ClientHTTPRequests {
      * Функция получает токен при успешной регистрации пользователя
      * @param _Username String (имя пользователя)
      * @param _SteamURL String (Steam-аккаунт)
+     * @param _EMail String (почта пользователя)
      * @param _Password String (пароль для регистрации)
      * @return String
      * @see <a href="https://github.com/RobertoSenyor/TFG_Documentation/blob/main/API.md#регистрация">GitHubURL</a>
      */
-    public static String sendPostRequest_RegistrationUser(String _Username, String _SteamURL, String _Password) {
+    public static String sendPostRequest_RegistrationUser(String _Username, String _SteamURL, String _EMail, String _Password) {
 
-        String urlRequest = "http://"+hostname+"/User/register";
+        String urlRequest = hostname+"/User/register";
 
         try {
             JSONObject jsonObject = new JSONObject();
 
             jsonObject.put("username", _Username);
             jsonObject.put("steam_url", _SteamURL);
+            jsonObject.put("email", _EMail);
             jsonObject.put("password", _Password);
 
             String post_data = jsonObject.toString();
@@ -123,7 +125,7 @@ public class ClientHTTPRequests {
      * @see <a href="https://github.com/RobertoSenyor/TFG_Documentation/blob/main/API.md#логин">GitHubURL</a>
      */
     public static String sendPostRequest_LoginUser(String _Username, String _Password) {
-        String urlRequest = "http:// "+hostname+" /User/login";
+        String urlRequest = hostname+"/User/login";
 
         try {
             JSONObject jsonObject = new JSONObject();
@@ -177,7 +179,7 @@ public class ClientHTTPRequests {
      * @see <a href="https://github.com/RobertoSenyor/TFG_Documentation/blob/main/API.md#выход">GitHubURL</a>
      */
     public static boolean sendPostRequest_LogoutUser(String _Token) {
-        String urlRequest = "http:// "+hostname+" /User/logout?token=" + _Token;
+        String urlRequest = hostname+"/User/logout?token=" + _Token;
 
         try {
             URL url = new URL(urlRequest);
@@ -213,7 +215,7 @@ public class ClientHTTPRequests {
      * @see <a href="https://github.com/RobertoSenyor/TFG_Documentation/blob/main/API.md#занятали-ссылка-на-профиль">GitHubURL</a>
      */
     public static boolean sendGetRequest_isExistSteamURL(String _SteamURL) {
-        String urlRequest = "http://"+hostname+"/User/exist_steam_url?steam_url=" + _SteamURL;
+        String urlRequest = hostname+"/User/exist_steam_url?steam_url=" + _SteamURL;
         try {
             URL url = new URL(urlRequest);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -251,7 +253,7 @@ public class ClientHTTPRequests {
      */
     public static boolean sendPostRequest_UpdateUserInfo(String _About, String _Token)
     {
-        String urlRequest = "http://"+hostname+"/User/update_info?token=" + _Token;
+        String urlRequest = hostname+"/User/update_info?token=" + _Token;
 
         try {
             JSONObject jsonObject = new JSONObject();
@@ -308,7 +310,7 @@ public class ClientHTTPRequests {
      */
     public static JSONObject sendGetRequest_GetUserInfo(Integer _UserID, String _Token)
     {
-        String urlRequest = "http://"+hostname+"/User/get_info?user_id=" + _UserID.toString() + "&token=" + _Token;
+        String urlRequest = hostname+"/User/get_info?user_id=" + _UserID.toString() + "&token=" + _Token;
 
         try {
             URL url = new URL(urlRequest);
@@ -347,7 +349,7 @@ public class ClientHTTPRequests {
      */
     public static JSONObject sendGetRequest_GetUserInfo(String _Token)
     {
-        String urlRequest = "http://"+hostname+"/User/get_info?token=" + _Token;
+        String urlRequest = hostname+"/User/get_info?token=" + _Token;
 
         try {
             URL url = new URL(urlRequest);
@@ -385,7 +387,7 @@ public class ClientHTTPRequests {
      */
     public static JSONArray sendGetRequest_GetInfoList(String _Token)
     {
-        String urlRequest = "http://"+hostname+"/Match/get_list?token=" + _Token;
+        String urlRequest = hostname+"/Match/get_list?token=" + _Token;
 
         try {
             URL url = new URL(urlRequest);
@@ -429,8 +431,8 @@ public class ClientHTTPRequests {
     {
         String urlRequest = "";
         switch (_AttitudeID) {
-            case 1 : urlRequest = "http://"+hostname+"/Match/like?token=" + _Token;
-            case -1 : urlRequest = "http://"+hostname+"/Match/dislike?token=" + _Token;
+            case 1 : urlRequest = hostname+"/Match/like?token=" + _Token;
+            case -1 : urlRequest = hostname+"/Match/dislike?token=" + _Token;
         }
 
         try {
@@ -488,7 +490,7 @@ public class ClientHTTPRequests {
      */
     public static boolean sendPostRequest_SendMessage(Integer _ChatID, String _Text, String _Token)
     {
-        String urlRequest = "http://"+hostname+"/Messages/send?token=" + _Token;
+        String urlRequest = hostname+"/Messages/send?token=" + _Token;
 
         try {
             JSONObject jsonObject = new JSONObject();
@@ -550,7 +552,7 @@ public class ClientHTTPRequests {
     public static JSONArray sendGetRequest_GetMessagesList(Integer _ChatID, Integer _MessageID,
                                                            Integer _Count, boolean _IsNext, String _Token)
     {
-        String urlRequest = "http://"+hostname+"/Messages/get_list?token=" + _Token + "&chat_id=" + _ChatID + "&last_id="
+        String urlRequest = hostname+"/Messages/get_list?token=" + _Token + "&chat_id=" + _ChatID + "&last_id="
                 + _MessageID  + "&count=" + _Count + "&is_next=" + _IsNext;
 
         try {
@@ -590,7 +592,7 @@ public class ClientHTTPRequests {
      */
     public static JSONArray sendGetRequest_GetChatsList(String _Token)
     {
-        String urlRequest = "http://"+hostname+"/Messages/get_chat_list?token=" + _Token;
+        String urlRequest = hostname+"/Messages/get_chat_list?token=" + _Token;
 
         try {
             URL url = new URL(urlRequest);
@@ -631,7 +633,7 @@ public class ClientHTTPRequests {
      */
     public static JSONArray sendGetRequest_FindMessage(Integer _ChatID, String _Text, String _Token)
     {
-        String urlRequest = "http://"+hostname+"/Messages/find_message?token=" + _Token + "&chat_id=" + _ChatID + "&text=" + _Text;
+        String urlRequest = hostname+"/Messages/find_message?token=" + _Token + "&chat_id=" + _ChatID + "&text=" + _Text;
 
         try {
             URL url = new URL(urlRequest);
@@ -672,7 +674,7 @@ public class ClientHTTPRequests {
      */
     public static boolean sendPostRequest_AddUserInBlackList(int _UserID, String _Token)
     {
-        String urlRequest = "http://"+hostname+"/Messages/black_list?token=" + _Token;
+        String urlRequest = hostname+"/Messages/black_list?token=" + _Token;
 
         try {
             JSONObject jsonObject = new JSONObject();
@@ -728,7 +730,7 @@ public class ClientHTTPRequests {
      */
     public static boolean sendPostRequest_DropChat(int _ChatID, String _Token)
     {
-        String urlRequest = "http://"+hostname+"/Messages/delete_chat?token=" + _Token;
+        String urlRequest = hostname+"/Messages/delete_chat?token=" + _Token;
 
         try {
             JSONObject jsonObject = new JSONObject();
