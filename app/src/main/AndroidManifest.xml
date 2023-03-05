@@ -8,23 +8,33 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
-        android:hardwareAccelerated="true"
-        android:largeHeap="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
+        android:hardwareAccelerated="true"
         android:icon="@drawable/pngwing_com__1_"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@android:drawable/ic_dialog_dialer"
         android:supportsRtl="true"
         android:theme="@style/Theme.PlayMate"
         tools:targetApi="31">
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".ui.Activities.MainActivity"
+            android:exported="false"
+            android:theme="@style/MyTheme">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ui.Activities.WelcomeActivity"
+            android:exported="true"
             android:screenOrientation="portrait"
-            android:exported="true">
+            android:theme="@style/Theme.PlayMate">
             <intent-filter>
-<!--                <action android:name="android.intent.action.MAIN" />-->
+
+                <!-- <action android:name="android.intent.action.MAIN" /> -->
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
@@ -33,12 +43,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".RegistrationActivity"
-            android:parentActivityName=".WelcomeActivity"
+            android:name=".ui.Activities.RegistrationActivity"
+            android:exported="true"
+            android:parentActivityName=".ui.Activities.WelcomeActivity"
             android:screenOrientation="portrait"
-            android:exported="true">
+            android:theme="@style/Theme.PlayMate">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
@@ -47,11 +59,13 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.Activities.LoginActivity"
+            android:exported="true"
             android:screenOrientation="portrait"
-            android:exported="true">
+            android:theme="@style/Theme.PlayMate">
             <intent-filter>
-                <!--                <action android:name="android.intent.action.MAIN" />-->
+
+                <!-- <action android:name="android.intent.action.MAIN" /> -->
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

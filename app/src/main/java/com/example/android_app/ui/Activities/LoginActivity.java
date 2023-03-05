@@ -1,30 +1,19 @@
-package com.example.android_app;
+package com.example.android_app.ui.Activities;
+
+import android.content.Context;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
+import android.widget.Button;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.VibrationEffect;
-import android.view.View;
-import android.widget.Button;
-import android.os.Vibrator;
+import com.example.android_app.R;
 
-/**
- * Запускаемый класс
- */
-public class WelcomeActivity extends AppCompatActivity {
 
-    private AlertDialog.Builder dialogBuilder;
-    private AlertDialog dialog;
-    private Button acceptIntType;
-    private Button acceptPoint2DType;
-    private Button closeBtn;
-
-    private Button AboutUsBtn;
-    private Button RegistrationBtn;
+public class LoginActivity extends AppCompatActivity {
 
     /**
      * короткая вибрация (50мсек)
@@ -116,24 +105,7 @@ public class WelcomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.welcome_page);
-
-        AboutUsBtn = (Button) findViewById(R.id.AboutUsBtn);
-        AboutUsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                smallVibration();
-            }
-        });
-
-        RegistrationBtn = (Button) findViewById(R.id.RegistarationBtn);
-
-        RegistrationBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                mediumVibration();
+        setContentView(R.layout.loginactivity_page);
 
                 /*
                 Intent.FLAG_ACTIVITY_REORDER_TO_FRONT - перемещает activity,
@@ -149,15 +121,5 @@ public class WelcomeActivity extends AppCompatActivity {
                 Intent.FLAG_ACTIVITY_NO_HISTORY - позволит не сохранять в стеке запускаемую activity.
                 */
 
-                try {
-                    Intent intent = new Intent(WelcomeActivity.this, RegistrationActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                    startActivity(intent);
-                    finish();
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
-            }
-        });
     }
 }

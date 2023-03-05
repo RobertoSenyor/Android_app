@@ -35,9 +35,18 @@
         android:testOnly="true"
         android:theme="@style/Theme.PlayMate" >
         <activity
-            android:name="com.example.android_app.WelcomeActivity"
+            android:name="com.example.android_app.ui.Activities.MainActivity"
+            android:exported="false"
+            android:theme="@style/MyTheme" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="com.example.android_app.ui.Activities.WelcomeActivity"
             android:exported="true"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PlayMate" >
             <intent-filter>
 
                 <!-- <action android:name="android.intent.action.MAIN" /> -->
@@ -49,10 +58,11 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.android_app.RegistrationActivity"
+            android:name="com.example.android_app.ui.Activities.RegistrationActivity"
             android:exported="true"
-            android:parentActivityName="com.example.android_app.WelcomeActivity"
-            android:screenOrientation="portrait" >
+            android:parentActivityName="com.example.android_app.ui.Activities.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PlayMate" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -64,9 +74,10 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.android_app.LoginActivity"
+            android:name="com.example.android_app.ui.Activities.LoginActivity"
             android:exported="true"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PlayMate" >
             <intent-filter>
 
                 <!-- <action android:name="android.intent.action.MAIN" /> -->
@@ -94,6 +105,13 @@
                 android:name="androidx.lifecycle.ProcessLifecycleInitializer"
                 android:value="androidx.startup" />
         </provider>
+
+        <uses-library
+            android:name="androidx.window.extensions"
+            android:required="false" />
+        <uses-library
+            android:name="androidx.window.sidecar"
+            android:required="false" />
     </application>
 
 </manifest>

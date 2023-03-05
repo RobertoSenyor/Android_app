@@ -1,4 +1,4 @@
-package com.example.android_app;
+package com.example.android_app.HTTPInteraction;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -10,7 +10,7 @@ import java.net.URL;
 public class ClientHTTPRequests {
 
     // TODO - поменять URL
-    public static final String hostname = "https://trifonovalex2001.fvds.ru/api";
+    public static final String hostname = "https://trifonovalex2001.fvds.ru/api_stub";
 
     /**
      * Функция возвращает true\false если пользователь с этим именем (_Username)

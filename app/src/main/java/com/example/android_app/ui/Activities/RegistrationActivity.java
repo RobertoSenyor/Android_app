@@ -1,10 +1,9 @@
-package com.example.android_app;
+package com.example.android_app.ui.Activities;
 
 import static android.app.Notification.DEFAULT_SOUND;
 import static android.app.Notification.DEFAULT_VIBRATE;
 
 import android.annotation.SuppressLint;
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -15,16 +14,15 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
-import android.text.style.DrawableMarginSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationChannelCompat;
 import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
+
+import com.example.android_app.HTTPInteraction.ClientHTTPRequests;
+import com.example.android_app.R;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -258,6 +256,16 @@ public class RegistrationActivity extends AppCompatActivity {
 
                     createChannelIfNeeded(notificationManager);
                     notificationManager.notify(NOTIFY_ID, notificationBuilder.build());
+
+                    try {
+                        // TODO - переход к нужному окну
+                        Intent intent_newView = new Intent(RegistrationActivity.this, MainActivity.class);
+                        intent_newView.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                        startActivity(intent_newView);
+                        finish();
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
 
                 }
                 else {

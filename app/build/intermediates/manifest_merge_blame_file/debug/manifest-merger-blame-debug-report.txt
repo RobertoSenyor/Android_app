@@ -33,25 +33,25 @@
 20-->[androidx.core:core:1.9.0] /home/romanus/.gradle/caches/transforms-3/9811bf6e0ea8002748e1a5d1e9eb40bd/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
 21
 22    <application
-22-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:10:5-67:19
+22-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:10:5-81:19
 23        android:allowBackup="true"
-23-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:13:9-35
+23-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:11:9-35
 24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 24-->[androidx.core:core:1.9.0] /home/romanus/.gradle/caches/transforms-3/9811bf6e0ea8002748e1a5d1e9eb40bd/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 25        android:dataExtractionRules="@xml/data_extraction_rules"
-25-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:14:9-65
+25-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:12:9-65
 26        android:debuggable="true"
 27        android:extractNativeLibs="false"
 28        android:fullBackupContent="@xml/backup_rules"
-28-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:15:9-54
+28-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:13:9-54
 29        android:hardwareAccelerated="true"
-29-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:11:9-43
+29-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:14:9-43
 30        android:icon="@drawable/pngwing_com__1_"
-30-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:16:9-49
+30-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:15:9-49
 31        android:label="@string/app_name"
-31-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:17:9-41
+31-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:16:9-41
 32        android:largeHeap="true"
-32-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:12:9-33
+32-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:17:9-33
 33        android:roundIcon="@android:drawable/ic_dialog_dialer"
 33-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:18:9-63
 34        android:supportsRtl="true"
@@ -60,111 +60,145 @@
 36        android:theme="@style/Theme.PlayMate" >
 36-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:20:9-46
 37        <activity
-37-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:22:9-34:20
-38            android:name="com.example.android_app.WelcomeActivity"
-38-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:23:13-44
-39            android:exported="true"
-39-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:25:13-36
-40            android:screenOrientation="portrait" >
-40-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:24:13-49
-41            <intent-filter>
-41-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:26:13-29:29
-42
-43                <!-- <action android:name="android.intent.action.MAIN" /> -->
-44                <category android:name="android.intent.category.LAUNCHER" />
-44-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:28:17-77
-44-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:28:27-74
-45            </intent-filter>
-46
-47            <meta-data
-47-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:31:13-33:36
-48                android:name="android.app.lib_name"
-48-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:32:17-52
-49                android:value="" />
-49-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:33:17-33
-50        </activity>
-51        <activity
-51-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:35:9-48:20
-52            android:name="com.example.android_app.RegistrationActivity"
-52-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:36:13-49
-53            android:exported="true"
-53-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:39:13-36
-54            android:parentActivityName="com.example.android_app.WelcomeActivity"
-54-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:37:13-58
-55            android:screenOrientation="portrait" >
-55-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:38:13-49
-56            <intent-filter>
-56-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:40:13-43:29
-57                <action android:name="android.intent.action.MAIN" />
-57-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:41:17-69
-57-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:41:25-66
-58
-59                <category android:name="android.intent.category.LAUNCHER" />
-59-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:28:17-77
-59-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:28:27-74
-60            </intent-filter>
-61
-62            <meta-data
-62-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:31:13-33:36
-63                android:name="android.app.lib_name"
-63-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:32:17-52
-64                android:value="" />
-64-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:33:17-33
-65        </activity>
-66        <activity
-66-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:49:9-62:20
-67            android:name="com.example.android_app.LoginActivity"
-67-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:50:13-42
-68            android:exported="true"
-68-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:52:13-36
-69            android:screenOrientation="portrait" >
-69-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:51:13-49
-70            <intent-filter>
-70-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:26:13-29:29
+37-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:22:9-29:20
+38            android:name="com.example.android_app.ui.Activities.MainActivity"
+38-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:23:13-55
+39            android:exported="false"
+39-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:24:13-37
+40            android:theme="@style/MyTheme" >
+40-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:25:13-43
+41            <meta-data
+41-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:26:13-28:36
+42                android:name="android.app.lib_name"
+42-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:27:17-52
+43                android:value="" />
+43-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:28:17-33
+44        </activity>
+45        <activity
+45-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:30:9-44:20
+46            android:name="com.example.android_app.ui.Activities.WelcomeActivity"
+46-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:31:13-58
+47            android:exported="true"
+47-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:32:13-36
+48            android:screenOrientation="portrait"
+48-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:33:13-49
+49            android:theme="@style/Theme.PlayMate" >
+49-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:34:13-50
+50            <intent-filter>
+50-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:35:13-39:29
+51
+52                <!-- <action android:name="android.intent.action.MAIN" /> -->
+53                <category android:name="android.intent.category.LAUNCHER" />
+53-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:38:17-77
+53-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:38:27-74
+54            </intent-filter>
+55
+56            <meta-data
+56-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:26:13-28:36
+57                android:name="android.app.lib_name"
+57-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:27:17-52
+58                android:value="" />
+58-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:28:17-33
+59        </activity>
+60        <activity
+60-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:45:9-60:20
+61            android:name="com.example.android_app.ui.Activities.RegistrationActivity"
+61-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:46:13-63
+62            android:exported="true"
+62-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:47:13-36
+63            android:parentActivityName="com.example.android_app.ui.Activities.WelcomeActivity"
+63-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:48:13-72
+64            android:screenOrientation="portrait"
+64-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:49:13-49
+65            android:theme="@style/Theme.PlayMate" >
+65-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:50:13-50
+66            <intent-filter>
+66-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:51:13-55:29
+67                <action android:name="android.intent.action.MAIN" />
+67-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:52:17-69
+67-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:52:25-66
+68
+69                <category android:name="android.intent.category.LAUNCHER" />
+69-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:38:17-77
+69-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:38:27-74
+70            </intent-filter>
 71
-72                <!-- <action android:name="android.intent.action.MAIN" /> -->
-73
-74                <category android:name="android.intent.category.LAUNCHER" />
-74-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:28:17-77
-74-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:28:27-74
-75            </intent-filter>
-76
-77            <meta-data
-77-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:31:13-33:36
-78                android:name="android.app.lib_name"
-78-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:32:17-52
-79                android:value="" />
-79-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:33:17-33
-80        </activity>
-81
-82        <meta-data
-82-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:64:9-66:57
-83            android:name="preloaded_fonts"
-83-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:65:13-43
-84            android:resource="@array/preloaded_fonts" />
-84-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:66:13-54
-85
-86        <provider
-86-->[androidx.emoji2:emoji2:1.2.0] /home/romanus/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
-87            android:name="androidx.startup.InitializationProvider"
-87-->[androidx.emoji2:emoji2:1.2.0] /home/romanus/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
-88            android:authorities="com.example.android_app.androidx-startup"
-88-->[androidx.emoji2:emoji2:1.2.0] /home/romanus/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
-89            android:exported="false" >
-89-->[androidx.emoji2:emoji2:1.2.0] /home/romanus/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
-90            <meta-data
-90-->[androidx.emoji2:emoji2:1.2.0] /home/romanus/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
-91                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-91-->[androidx.emoji2:emoji2:1.2.0] /home/romanus/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
-92                android:value="androidx.startup" />
-92-->[androidx.emoji2:emoji2:1.2.0] /home/romanus/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
-93            <meta-data
-93-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/romanus/.gradle/caches/transforms-3/0ce9e5f033589fdf0ab757f82f7808ec/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
-94                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-94-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/romanus/.gradle/caches/transforms-3/0ce9e5f033589fdf0ab757f82f7808ec/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
-95                android:value="androidx.startup" />
-95-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/romanus/.gradle/caches/transforms-3/0ce9e5f033589fdf0ab757f82f7808ec/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
-96        </provider>
-97    </application>
-98
-99</manifest>
+72            <meta-data
+72-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:26:13-28:36
+73                android:name="android.app.lib_name"
+73-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:27:17-52
+74                android:value="" />
+74-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:28:17-33
+75        </activity>
+76        <activity
+76-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:61:9-76:20
+77            android:name="com.example.android_app.ui.Activities.LoginActivity"
+77-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:62:13-56
+78            android:exported="true"
+78-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:63:13-36
+79            android:screenOrientation="portrait"
+79-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:64:13-49
+80            android:theme="@style/Theme.PlayMate" >
+80-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:65:13-50
+81            <intent-filter>
+81-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:35:13-39:29
+82
+83                <!-- <action android:name="android.intent.action.MAIN" /> -->
+84
+85                <category android:name="android.intent.category.LAUNCHER" />
+85-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:38:17-77
+85-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:38:27-74
+86            </intent-filter>
+87
+88            <meta-data
+88-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:26:13-28:36
+89                android:name="android.app.lib_name"
+89-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:27:17-52
+90                android:value="" />
+90-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:28:17-33
+91        </activity>
+92
+93        <meta-data
+93-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:78:9-80:57
+94            android:name="preloaded_fonts"
+94-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:79:13-43
+95            android:resource="@array/preloaded_fonts" />
+95-->/home/romanus/НГТУ/Android_app/app/src/main/AndroidManifest.xml:80:13-54
+96
+97        <provider
+97-->[androidx.emoji2:emoji2:1.2.0] /home/romanus/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+98            android:name="androidx.startup.InitializationProvider"
+98-->[androidx.emoji2:emoji2:1.2.0] /home/romanus/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+99            android:authorities="com.example.android_app.androidx-startup"
+99-->[androidx.emoji2:emoji2:1.2.0] /home/romanus/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+100            android:exported="false" >
+100-->[androidx.emoji2:emoji2:1.2.0] /home/romanus/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+101            <meta-data
+101-->[androidx.emoji2:emoji2:1.2.0] /home/romanus/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+102                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+102-->[androidx.emoji2:emoji2:1.2.0] /home/romanus/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+103                android:value="androidx.startup" />
+103-->[androidx.emoji2:emoji2:1.2.0] /home/romanus/.gradle/caches/transforms-3/c03fa7bc00a04a375204b573f0966d9f/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+104            <meta-data
+104-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/romanus/.gradle/caches/transforms-3/0ce9e5f033589fdf0ab757f82f7808ec/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+105                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+105-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/romanus/.gradle/caches/transforms-3/0ce9e5f033589fdf0ab757f82f7808ec/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+106                android:value="androidx.startup" />
+106-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/romanus/.gradle/caches/transforms-3/0ce9e5f033589fdf0ab757f82f7808ec/transformed/lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+107        </provider>
+108
+109        <uses-library
+109-->[androidx.window:window:1.0.0] /home/romanus/.gradle/caches/transforms-3/073f10b23065a04cd4c659168bad23fb/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
+110            android:name="androidx.window.extensions"
+110-->[androidx.window:window:1.0.0] /home/romanus/.gradle/caches/transforms-3/073f10b23065a04cd4c659168bad23fb/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
+111            android:required="false" />
+111-->[androidx.window:window:1.0.0] /home/romanus/.gradle/caches/transforms-3/073f10b23065a04cd4c659168bad23fb/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
+112        <uses-library
+112-->[androidx.window:window:1.0.0] /home/romanus/.gradle/caches/transforms-3/073f10b23065a04cd4c659168bad23fb/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
+113            android:name="androidx.window.sidecar"
+113-->[androidx.window:window:1.0.0] /home/romanus/.gradle/caches/transforms-3/073f10b23065a04cd4c659168bad23fb/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
+114            android:required="false" />
+114-->[androidx.window:window:1.0.0] /home/romanus/.gradle/caches/transforms-3/073f10b23065a04cd4c659168bad23fb/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
+115    </application>
+116
+117</manifest>
