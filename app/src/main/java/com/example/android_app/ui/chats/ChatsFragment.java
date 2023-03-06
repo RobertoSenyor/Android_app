@@ -4,13 +4,20 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.android_app.R;
 import com.example.android_app.databinding.FragmentChatsBinding;
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ChatsFragment extends Fragment {
 
@@ -24,8 +31,6 @@ public class ChatsFragment extends Fragment {
         binding = FragmentChatsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        chatsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

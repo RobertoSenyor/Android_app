@@ -223,6 +223,24 @@ public class RegistrationActivity extends AppCompatActivity {
         InPageRegistrationBtn = (Button) findViewById(R.id.InPageRegistrationBtn);
         ExistAccountBtn = (Button) findViewById(R.id.ExistAccountBtn);
 
+        ExistAccountBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                mediumVibration();
+
+                try {
+                    Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
+        });
+
+
         InPageRegistrationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
