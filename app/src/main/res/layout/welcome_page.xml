@@ -16,44 +16,47 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".MainActivity">
+            tools:context=".WelcomeActivity">
 
             <Button
                 android:id="@id/AboutUsBtn"
                 android:layout_width="105dp"
-                android:layout_height="35dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="16dp"
                 android:background="@android:color/transparent"
                 android:text="О нас"
+                android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.233"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/LoginBtn"
                 android:layout_width="wrap_content"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/login_button_border"
+                android:padding="10dp"
                 android:text="Войти"
+                android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.873"
+                app:layout_constraintHorizontal_bias="0.75"
                 app:layout_constraintStart_toEndOf="@+id/AboutUsBtn"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/RegistarationBtn"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
                 android:layout_marginTop="28dp"
                 android:background="@drawable/registration_button_border"
+                android:textAllCaps="false"
                 android:text="Регистрация"
                 android:textSize="11dp"
                 app:layout_constraintEnd_toEndOf="parent"

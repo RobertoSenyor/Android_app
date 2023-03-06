@@ -1,12 +1,10 @@
-package com.example.android_app;
+package com.example.android_app.ui.Activities;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.android_app.RegistrationActivity;
-import android.annotation.SuppressLint;
+
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
@@ -14,10 +12,12 @@ import android.view.View;
 import android.widget.Button;
 import android.os.Vibrator;
 
+import com.example.android_app.R;
+
 /**
  * Запускаемый класс
  */
-public class MainActivity extends AppCompatActivity {
+public class WelcomeActivity extends AppCompatActivity {
 
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private Button closeBtn;
 
     private Button AboutUsBtn;
+    private Button LoginBtn;
     private Button RegistrationBtn;
 
     /**
@@ -129,6 +130,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        LoginBtn = (Button) findViewById(R.id.LoginBtn);
+
+        LoginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                mediumVibration();
+
+                try {
+                    Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
+        });
+
         RegistrationBtn = (Button) findViewById(R.id.RegistarationBtn);
 
         RegistrationBtn.setOnClickListener(new View.OnClickListener() {
@@ -152,8 +172,8 @@ public class MainActivity extends AppCompatActivity {
                 */
 
                 try {
-                    Intent intent = new Intent(MainActivity.this, RegistrationActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                    Intent intent = new Intent(WelcomeActivity.this, RegistrationActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {

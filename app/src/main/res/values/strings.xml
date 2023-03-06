@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PlayMate</string>
+    <string name="authorisation">Авторизация</string>
+    <string name="nickname_auth">Никнейм</string>
+    <string name="password_auth">Пароль</string>
+    <string name="btn_auth">Авторизоваться</string>
 </resources>
