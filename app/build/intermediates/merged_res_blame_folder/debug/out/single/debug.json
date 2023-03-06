@@ -16,20 +16,20 @@
         "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-45:/menu/bottom_nav_menu.xml"
     },
     {
-        "merged": "com.example.android_app-merged_res-43:/layout_activity_main.xml.flat",
-        "source": "com.example.android_app-main-45:/layout/activity_main.xml"
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-43:/drawable_pngwing_com__3_.png.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-45:/drawable/pngwing_com__3_.png"
     },
     {
         "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-43:/drawable_fred_reg_01.png.flat",
         "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-45:/drawable/fred_reg_01.png"
     },
     {
-        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-43:/drawable_pngwing_com__3_.png.flat",
-        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-45:/drawable/pngwing_com__3_.png"
-    },
-    {
         "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-43:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-45:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-43:/color_drawer_item.xml.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-45:/color/drawer_item.xml"
     },
     {
         "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-43:/drawable_fred_03.png.flat",
@@ -90,6 +90,10 @@
     {
         "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-43:/mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-45:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.android_app-merged_res-43:/layout_fragment_chats.xml.flat",
+        "source": "com.example.android_app-main-45:/layout/fragment_chats.xml"
     },
     {
         "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-43:/font_roboto_light.xml.flat",
@@ -172,8 +176,8 @@
         "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-45:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.android_app-merged_res-43:/color_drawer_item.xml.flat",
-        "source": "com.example.android_app-main-45:/color/drawer_item.xml"
+        "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-43:/layout_custom_chat_element_layout.xml.flat",
+        "source": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-main-45:/layout/custom_chat_element_layout.xml"
     },
     {
         "merged": "/home/romanus/.gradle/daemon/7.4/com.example.android_app-merged_res-43:/drawable_ic_baseline_deblur_24.xml.flat",

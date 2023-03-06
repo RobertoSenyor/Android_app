@@ -3120,6 +3120,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id image_fred1
 id image_fred2
 id image_fred3
@@ -3134,6 +3135,7 @@ id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
 id labeled
+id lastMessage_textView
 id layout
 id left
 id leftToRight
@@ -3223,6 +3225,7 @@ id navigation_profile
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id nickname_textView
 id noScroll
 id noState
 id none
@@ -3248,6 +3251,7 @@ id path
 id pathRelative
 id peekHeight
 id percent
+id person_avatar_imageView
 id pin
 id position
 id postLayout
@@ -3372,12 +3376,9 @@ id textView6
 id textView7
 id textView8
 id textView9
-id text_dashboard
-id text_home
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
-id text_notifications
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -3385,6 +3386,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timeLastMessage_textView
 id title
 id titleDividerNoCustom
 id title_template
@@ -3531,6 +3533,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout custom_chat_element_layout
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

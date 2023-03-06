@@ -54,7 +54,6 @@
     <string name="title_profile">Профиль</string>
     <style name="MyNavButtom" parent="Widget.Design.BottomNavigationView">
         <item name="fontFamily">@font/roboto_light</item>
-        <item name="fontWeight">@integer/material_motion_duration_long_1</item>
     </style>
     <style name="MyTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/background50percent</item>

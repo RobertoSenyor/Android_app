@@ -36,8 +36,14 @@
         android:theme="@style/Theme.PlayMate" >
         <activity
             android:name="com.example.android_app.ui.Activities.MainActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/MyTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -50,6 +56,7 @@
             <intent-filter>
 
                 <!-- <action android:name="android.intent.action.MAIN" /> -->
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
@@ -64,7 +71,8 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.PlayMate" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+
+                <!-- <action android:name="android.intent.action.MAIN" /> -->
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -94,6 +102,10 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
+        <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="com.example.android_app.com.squareup.picasso"
+            android:exported="false" />
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.example.android_app.androidx-startup"

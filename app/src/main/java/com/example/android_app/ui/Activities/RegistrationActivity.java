@@ -122,7 +122,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private boolean IsSuccessRegistration(String _Username, String _SteamURL, String _EMail, String _Password, String _AgainPassword) {
 
         // TODO - приравнять к нулю
-        AtomicInteger success_instance = new AtomicInteger(0);
+        AtomicInteger success_instance = new AtomicInteger(4);
 
         AtomicBoolean isExistUsername = new AtomicBoolean(true);
         AtomicBoolean isExistSteamURL = new AtomicBoolean(false);
