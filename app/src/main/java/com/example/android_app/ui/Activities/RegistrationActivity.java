@@ -122,7 +122,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private boolean IsSuccessRegistration(String _Username, String _SteamURL, String _EMail, String _Password, String _AgainPassword) {
 
         // TODO - приравнять к нулю
-        AtomicInteger success_instance = new AtomicInteger(4);
+        AtomicInteger success_instance = new AtomicInteger(0);
 
         AtomicBoolean isExistUsername = new AtomicBoolean(true);
         AtomicBoolean isExistSteamURL = new AtomicBoolean(false);
@@ -222,6 +222,24 @@ public class RegistrationActivity extends AppCompatActivity {
 
         InPageRegistrationBtn = (Button) findViewById(R.id.InPageRegistrationBtn);
         ExistAccountBtn = (Button) findViewById(R.id.ExistAccountBtn);
+
+        ExistAccountBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                mediumVibration();
+
+                try {
+                    Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
+        });
+
 
         InPageRegistrationBtn.setOnClickListener(new View.OnClickListener() {
             @Override

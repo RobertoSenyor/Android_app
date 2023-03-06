@@ -26,6 +26,7 @@ public class WelcomeActivity extends AppCompatActivity {
     private Button closeBtn;
 
     private Button AboutUsBtn;
+    private Button LoginBtn;
     private Button RegistrationBtn;
 
     /**
@@ -126,6 +127,25 @@ public class WelcomeActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 smallVibration();
+            }
+        });
+
+        LoginBtn = (Button) findViewById(R.id.LoginBtn);
+
+        LoginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                mediumVibration();
+
+                try {
+                    Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
             }
         });
 

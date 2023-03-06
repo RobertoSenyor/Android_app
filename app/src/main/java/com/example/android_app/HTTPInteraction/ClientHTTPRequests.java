@@ -129,7 +129,7 @@ public class ClientHTTPRequests {
 
         try {
             JSONObject jsonObject = new JSONObject();
-            jsonObject.put("username", _Username);
+            jsonObject.put("login", _Username);
             jsonObject.put("password", _Password);
 
             String post_data = jsonObject.toString();
