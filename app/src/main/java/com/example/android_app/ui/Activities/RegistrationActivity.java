@@ -21,7 +21,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
-import com.example.android_app.HTTPInteraction.ClientHTTPRequests ;
+import com.example.android_app.HTTPInteraction.ClientHTTPRequests;
 import com.example.android_app.R;
 
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -239,6 +239,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
             }
         });
+
 
         InPageRegistrationBtn.setOnClickListener(new View.OnClickListener() {
             @Override

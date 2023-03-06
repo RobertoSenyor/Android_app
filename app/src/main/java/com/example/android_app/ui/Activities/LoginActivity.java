@@ -72,7 +72,6 @@ public class LoginActivity extends AppCompatActivity {
             v.vibrate(200);
         }
     }
-
     /**
      * Проверяет успешность введенных данных для авторизации
      *
