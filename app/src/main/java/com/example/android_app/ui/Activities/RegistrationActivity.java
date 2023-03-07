@@ -21,9 +21,13 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
+import com.example.android_app.CacheInteraction.PlayMateCache;
 import com.example.android_app.HTTPInteraction.ClientHTTPRequests;
 import com.example.android_app.R;
 
+import org.json.JSONException;
+
+import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
@@ -183,8 +187,16 @@ public class RegistrationActivity extends AppCompatActivity {
             // Проверк успешности регистрации
             // ----------------------------------------------------------------------------------------------------------
 
-            // TODO - сохранение токена
-            if (!sessionToken.get().isEmpty()) {
+            if (!sessionToken.get().isEmpty())
+            {
+                try { // кэширование токена
+                    PlayMateCache.getInstance().setToken(sessionToken.get(),RegistrationActivity.this.getApplicationContext());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
                 success_instance.getAndIncrement();
                 Thread.currentThread().interrupt();
             }
@@ -208,7 +220,35 @@ public class RegistrationActivity extends AppCompatActivity {
 
     @SuppressLint("MissingInflatedId")
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        Context appContext = getApplicationContext();
+
+        try
+        {
+            String token = PlayMateCache.getInstance().getToken(appContext);
+
+            if (!token.isEmpty() || token!=null)
+            {
+                try {
+                    // TODO - переход к нужному окну
+                    Intent intent_newView = new Intent(RegistrationActivity.this, MainActivity.class);
+                    intent_newView.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent_newView);
+                    finish();
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registration_page);
 
