@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.chats.ChatsFragment"
+    tools:context=".ui.Activities.ChatsFragment"
     android:background="@color/background"
     >
 
@@ -14,8 +14,12 @@
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backgrnd_welcome_page"
-        tools:ignore="MissingConstraints" />
+        />
 
 <!--    <LinearLayout-->
 <!--        android:id="@+id/layoutChats"-->
