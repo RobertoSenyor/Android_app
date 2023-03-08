@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_chats"
-        android:name="com.example.android_app.ui.chats.ChatsFragment"
+        android:name="com.example.android_app.ui.Activities.ChatsFragment"
         android:label="@string/title_chats_concrete"
         tools:layout="@layout/fragment_chats" />
 
     <fragment
         android:id="@+id/navigation_persons"
-        android:name="com.example.android_app.ui.persons.PersonsFragment"
+        android:name="com.example.android_app.ui.Activities.PersonsFragment"
         android:label="@string/title_persons"
         tools:layout="@layout/fragment_persons" />
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.example.android_app.ui.profile.ProfileFragment"
+        android:name="com.example.android_app.ui.Activities.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>
