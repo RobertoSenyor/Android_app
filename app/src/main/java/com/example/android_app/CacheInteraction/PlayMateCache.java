@@ -9,7 +9,6 @@ import org.json.simple.parser.ParseException;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
@@ -56,6 +55,9 @@ public class PlayMateCache
         jsonCache.put(key_isFirstBoot, isFirstBoot);
         jsonCache.put(key_Token, Token);
 
+        System.out.println("SAVESAVESAVE\n"+jsonCache.toString(1)+"\nSAVESAVESAVE");
+//        System.out.println("SAVESAVESAVE\n"+jsonCache.toString().getBytes()+"\nSAVESAVESAVE");
+
         // FileOutputStream:
         // false - перезапись
         // true - добавление записей
@@ -84,7 +86,7 @@ public class PlayMateCache
             int istart = sb.toString().indexOf("{");
             int iend = sb.toString().length();
 
-//            System.out.println("\nJSONJSONJSON\n"+sb.toString().substring(istart,iend)+"\nJSONJSONJSON\n");
+            System.out.println("\nJSONJSONJSON\n"+sb.toString().substring(istart,iend)+"\nJSONJSONJSON\n");
 
             JSONParser jsonParser = new JSONParser();
             jsonCache = new JSONObject((Map) jsonParser.parse(sb.toString().substring(istart,iend)));
@@ -96,19 +98,6 @@ public class PlayMateCache
         }
 
         return null;
-    }
-
-    public void clearCache(Context context) throws JSONException, IOException {
-        JSONObject jsonCache = new JSONObject();
-        jsonCache.put(key_isFirstBoot, true);
-        jsonCache.put(key_Token, "");
-
-        // FileOutputStream:
-        // false - перезапись
-        // true - добавление записей
-        ObjectOutput out = new ObjectOutputStream(new FileOutputStream(new File(context.getCacheDir(),"")+"cacheFile.srl", false));
-        out.writeObject(jsonCache.toString(1));
-        out.close();
     }
 
     public boolean IsFirstBoot(Context context) throws IOException, ClassNotFoundException, JSONException, ParseException {
