@@ -1,20 +1,22 @@
 package com.example.android_app.CacheInteraction;
 
 import android.content.Context;
-
-import com.example.android_app.Entities.Chats;
-
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
-
+import java.nio.charset.StandardCharsets;
+import java.util.Map;
 
 public class PlayMateCache
 {
@@ -29,7 +31,7 @@ public class PlayMateCache
     private PlayMateCache()
     {
         PlayMateCache.isFirstBoot = true;
-        PlayMateCache.Token = null;
+        PlayMateCache.Token = "";
     }
 
     public static PlayMateCache getInstance()
@@ -49,37 +51,56 @@ public class PlayMateCache
 
     private void saveCache(Context context) throws JSONException, IOException
     {
-        System.out.println("AAAAAAAAAAAAAAAAAAA\n"+context.getCacheDir()+"\nAAAAAAAAAAAAAAAAAAA");
-
         JSONObject jsonCache = new JSONObject();
         jsonCache.put(key_isFirstBoot, isFirstBoot);
         jsonCache.put(key_Token, Token);
+
+        System.out.println("SAVESAVESAVE\n"+jsonCache.toString(1)+"\nSAVESAVESAVE");
+//        System.out.println("SAVESAVESAVE\n"+jsonCache.toString().getBytes()+"\nSAVESAVESAVE");
 
         // FileOutputStream:
         // false - перезапись
         // true - добавление записей
         ObjectOutput out = new ObjectOutputStream(new FileOutputStream(new File(context.getCacheDir(),"")+"cacheFile.srl", false));
-        out.writeObject(jsonCache);
+        out.writeObject(jsonCache.toString(1));
         out.close();
     }
 
-    private JSONObject retrieveCache(Context context) throws IOException, ClassNotFoundException, JSONException
+    private JSONObject retrieveCache(Context context) throws IOException, ClassNotFoundException, JSONException, ParseException
     {
-        System.out.println("AAAAAAAAAAAAAAAAAAA\n"+context.getCacheDir()+"\nAAAAAAAAAAAAAAAAAAA");
+        JSONObject jsonCache;
 
-        JSONObject jsonCache = new JSONObject();
+        if(new File(new File(context.getCacheDir(),"")+"cacheFile.srl").exists())
+        {
+            BufferedReader br = new BufferedReader(new FileReader(new File(context.getCacheDir(),"")+"cacheFile.srl"));
+            StringBuilder sb = new StringBuilder();
 
-        ObjectInputStream in = new ObjectInputStream(new FileInputStream(new File(new File(context.getCacheDir(),"")+"cacheFile.srl")));
-        jsonCache = (JSONObject) in.readObject();
-        in.close();
+            String line;
 
-        PlayMateCache.isFirstBoot = jsonCache.getBoolean(key_isFirstBoot);
-        PlayMateCache.Token = jsonCache.getString(key_Token);
+            while ((line = br.readLine()) != null) {
+                sb.append(line);
+            }
 
-        return jsonCache;
+            br.close();
+
+            int istart = sb.toString().indexOf("{");
+            int iend = sb.toString().length();
+
+            System.out.println("\nJSONJSONJSON\n"+sb.toString().substring(istart,iend)+"\nJSONJSONJSON\n");
+
+            JSONParser jsonParser = new JSONParser();
+            jsonCache = new JSONObject((Map) jsonParser.parse(sb.toString().substring(istart,iend)));
+
+            PlayMateCache.isFirstBoot = jsonCache.getBoolean(key_isFirstBoot);
+            PlayMateCache.Token = jsonCache.getString(key_Token);
+
+            return jsonCache;
+        }
+
+        return null;
     }
 
-    public boolean IsFirstBoot(Context context) throws IOException, ClassNotFoundException, JSONException {
+    public boolean IsFirstBoot(Context context) throws IOException, ClassNotFoundException, JSONException, ParseException {
         retrieveCache(context);
         return isFirstBoot;
     }
@@ -89,7 +110,7 @@ public class PlayMateCache
         saveCache(context);
     }
 
-    public String getToken(Context context) throws JSONException, IOException, ClassNotFoundException {
+    public String getToken(Context context) throws JSONException, IOException, ClassNotFoundException, ParseException {
         retrieveCache(context);
         return Token;
     }

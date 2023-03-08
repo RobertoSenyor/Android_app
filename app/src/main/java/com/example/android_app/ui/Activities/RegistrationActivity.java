@@ -26,6 +26,7 @@ import com.example.android_app.HTTPInteraction.ClientHTTPRequests;
 import com.example.android_app.R;
 
 import org.json.JSONException;
+import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -228,7 +229,7 @@ public class RegistrationActivity extends AppCompatActivity {
         {
             String token = PlayMateCache.getInstance().getToken(appContext);
 
-            if (!token.isEmpty() || token!=null)
+            if (!token.equals(""))
             {
                 try {
                     // TODO - переход к нужному окну
@@ -246,6 +247,8 @@ public class RegistrationActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
             e.printStackTrace();
         }
 

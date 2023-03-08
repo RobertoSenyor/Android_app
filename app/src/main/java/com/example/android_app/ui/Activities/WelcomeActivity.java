@@ -16,6 +16,7 @@ import com.example.android_app.CacheInteraction.PlayMateCache;
 import com.example.android_app.R;
 
 import org.json.JSONException;
+import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
 
@@ -158,6 +159,8 @@ public class WelcomeActivity extends AppCompatActivity {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
             e.printStackTrace();
         }
 
