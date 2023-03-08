@@ -12,7 +12,13 @@ import android.view.View;
 import android.widget.Button;
 import android.os.Vibrator;
 
+import com.example.android_app.CacheInteraction.PlayMateCache;
 import com.example.android_app.R;
+
+import org.json.JSONException;
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
 
 /**
  * Запускаемый класс
@@ -118,6 +124,46 @@ public class WelcomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Context appContext = getApplicationContext();
+
+        try {
+            if(PlayMateCache.getInstance().IsFirstBoot(appContext))
+            {
+                Runnable task = () -> {
+                    try {
+                        PlayMateCache.getInstance().setIsFirstBoot(false, appContext);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                };
+
+                Thread thread = new Thread(task);
+                thread.start();
+            }
+            else
+            {
+                try {
+                    Intent intent = new Intent(WelcomeActivity.this, RegistrationActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome_page);
 
