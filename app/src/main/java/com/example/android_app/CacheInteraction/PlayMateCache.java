@@ -55,9 +55,6 @@ public class PlayMateCache
         jsonCache.put(key_isFirstBoot, isFirstBoot);
         jsonCache.put(key_Token, Token);
 
-        System.out.println("SAVESAVESAVE\n"+jsonCache.toString(1)+"\nSAVESAVESAVE");
-//        System.out.println("SAVESAVESAVE\n"+jsonCache.toString().getBytes()+"\nSAVESAVESAVE");
-
         // FileOutputStream:
         // false - перезапись
         // true - добавление записей
@@ -98,6 +95,25 @@ public class PlayMateCache
         }
 
         return null;
+    }
+
+    /**
+     * Приводи кэш к первоначальному виду
+     * @param context
+     * @throws JSONException
+     * @throws IOException
+     */
+    public void clearCache(Context context) throws JSONException, IOException {
+        JSONObject jsonCache = new JSONObject();
+        jsonCache.put(key_isFirstBoot, true);
+        jsonCache.put(key_Token, "");
+
+        // FileOutputStream:
+        // false - перезапись
+        // true - добавление записей
+        ObjectOutput out = new ObjectOutputStream(new FileOutputStream(new File(context.getCacheDir(),"")+"cacheFile.srl", false));
+        out.writeObject(jsonCache.toString(1));
+        out.close();
     }
 
     public boolean IsFirstBoot(Context context) throws IOException, ClassNotFoundException, JSONException, ParseException {
