@@ -139,4 +139,19 @@ public class PlayMateCache
         PlayMateCache.Token="";
         saveCache(context);
     }
+
+    public void setUserID(int user_id, Context context) throws JSONException, IOException {
+        PlayMateCache.user_id = user_id;
+        saveCache(context);
+    }
+
+    public Integer getUserID(Context context) throws JSONException, IOException, ParseException, ClassNotFoundException {
+        retrieveCache(context);
+        return user_id;
+    }
+
+    public void setUserIDNull(Context context) throws JSONException, IOException {
+        PlayMateCache.user_id = 0;
+        saveCache(context);
+    }
 }
