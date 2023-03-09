@@ -98,7 +98,7 @@ public class PlayMateCache
     }
 
     /**
-     * Приводи кэш к первоначальному виду
+     * Приводит кэш к первоначальному виду
      * @param context
      * @throws JSONException
      * @throws IOException
