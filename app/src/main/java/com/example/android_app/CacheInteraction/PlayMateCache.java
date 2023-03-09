@@ -55,9 +55,6 @@ public class PlayMateCache
         jsonCache.put(key_isFirstBoot, isFirstBoot);
         jsonCache.put(key_Token, Token);
 
-        System.out.println("SAVESAVESAVE\n"+jsonCache.toString(1)+"\nSAVESAVESAVE");
-//        System.out.println("SAVESAVESAVE\n"+jsonCache.toString().getBytes()+"\nSAVESAVESAVE");
-
         // FileOutputStream:
         // false - перезапись
         // true - добавление записей
@@ -100,6 +97,12 @@ public class PlayMateCache
         return null;
     }
 
+    /**
+     * Приводит кэш к первоначальному виду
+     * @param context
+     * @throws JSONException
+     * @throws IOException
+     */
     public void clearCache(Context context) throws JSONException, IOException {
         JSONObject jsonCache = new JSONObject();
         jsonCache.put(key_isFirstBoot, true);
