@@ -10,7 +10,7 @@ import java.net.URL;
 public class ClientHTTPRequests {
 
     // TODO - поменять URL
-    public static final String hostname = "https://trifonovalex2001.fvds.ru/api_stub";
+    public static final String hostname = "https://trifonovalex2001.fvds.ru/api";
 
     /**
      * Функция возвращает true\false если пользователь с этим именем (_Username)
@@ -209,7 +209,7 @@ public class ClientHTTPRequests {
 
     /**
      * Функция возвращает true\false если ссылка на профиль в Steam
-     * существует или нет соответственно
+     * занята или нет соответственно
      * @param _SteamURL String (ссылка на профиль в Steam)
      * @return boolean
      * @see <a href="https://github.com/RobertoSenyor/TFG_Documentation/blob/main/API.md#занятали-ссылка-на-профиль">GitHubURL</a>

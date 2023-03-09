@@ -100,6 +100,19 @@ public class PlayMateCache
         return null;
     }
 
+    public void clearCache(Context context) throws JSONException, IOException {
+        JSONObject jsonCache = new JSONObject();
+        jsonCache.put(key_isFirstBoot, true);
+        jsonCache.put(key_Token, "");
+
+        // FileOutputStream:
+        // false - перезапись
+        // true - добавление записей
+        ObjectOutput out = new ObjectOutputStream(new FileOutputStream(new File(context.getCacheDir(),"")+"cacheFile.srl", false));
+        out.writeObject(jsonCache.toString(1));
+        out.close();
+    }
+
     public boolean IsFirstBoot(Context context) throws IOException, ClassNotFoundException, JSONException, ParseException {
         retrieveCache(context);
         return isFirstBoot;

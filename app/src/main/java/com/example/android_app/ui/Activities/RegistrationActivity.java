@@ -17,6 +17,7 @@ import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
@@ -49,6 +50,8 @@ public class RegistrationActivity extends AppCompatActivity {
     private Button InPageRegistrationBtn;
     private Button ExistAccountBtn;
     private Button SocialPolicyBtn;
+
+    private ProgressBar registrationProgressBar;
 
     /**
      * короткая вибрация (50мсек)
@@ -152,7 +155,7 @@ public class RegistrationActivity extends AppCompatActivity {
             // Проверка ссылки на Steam
             // ----------------------------------------------------------------------------------------------------------
 
-            if (isExistSteamURL.get() == true && !_SteamURL.isEmpty() && URLTextField != null) {
+            if (isExistSteamURL.get() == false && !_SteamURL.isEmpty() && URLTextField != null) {
                 success_instance.getAndIncrement();
             } else {
                 URLTextField.setText("");
@@ -205,8 +208,13 @@ public class RegistrationActivity extends AppCompatActivity {
         Thread thread = new Thread(task);
         thread.start();
 
+        registrationProgressBar.setVisibility(View.VISIBLE);
+        InPageRegistrationBtn.setVisibility(View.INVISIBLE);
+
         while (true) {
             if (!thread.isAlive()) {
+                registrationProgressBar.setVisibility(View.INVISIBLE);
+                InPageRegistrationBtn.setVisibility(View.VISIBLE);
                 return success_instance.get() == 5 ? true : false;
             }
         }
@@ -265,6 +273,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
         InPageRegistrationBtn = (Button) findViewById(R.id.InPageRegistrationBtn);
         ExistAccountBtn = (Button) findViewById(R.id.ExistAccountBtn);
+
+        registrationProgressBar = (ProgressBar) findViewById(R.id.registrationProgressBar);
 
         ExistAccountBtn.setOnClickListener(new View.OnClickListener() {
             @Override
