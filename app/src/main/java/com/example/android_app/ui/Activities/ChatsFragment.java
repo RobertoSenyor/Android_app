@@ -41,54 +41,54 @@ public class ChatsFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_chats, container, false);
-        linear = (LinearLayout) view.findViewById(R.id.layoutChats);
-
-        int user_id;
-        JSONArray chatsArray = new JSONArray();
-
-        try {
-            user_id = ClientHTTPRequests.sendGetRequest_GetUserInfo(PlayMateCache.getInstance().getToken(inflater.getContext())).getInt("user_id");
-            chatsArray = ClientHTTPRequests.sendGetRequest_GetChatsList(PlayMateCache.getInstance().getToken(inflater.getContext()));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        for (int counter = 0; counter < chatsArray.length(); counter++) {
-            final View view_custom = getLayoutInflater().inflate(R.layout.custom_chat_element_layout, null);
-
-            TextView chatID = (TextView) view_custom.findViewById(R.id.chatID_TextView);
-            try {
-                chatID.setText(chatsArray.getJSONObject(counter).getInt("chat_id"));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            TextView timeLastMessage = (TextView) view_custom.findViewById(R.id.timeLastMessage_textView);
-            timeLastMessage.setText(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm")));
-
-            TextView nicknameTextView = (TextView) view_custom.findViewById(R.id.nickname_textView);
-            try {
-                nicknameTextView.setText(chatsArray.getJSONObject(counter).getInt("chat_id"));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            LinearLayout isThisUser = (LinearLayout) view_custom.findViewById(R.id.isThisUserSendMessage_LinearLayout);
-            LinearLayout isNoThisUser = (LinearLayout) view_custom.findViewById(R.id.isNoThisUserSendMessage_LinearLayout);
-
-            // todo - если user_id совпадает, то thisUser, иначе иначе
-            isThisUser.setVisibility(View.INVISIBLE);
-            isNoThisUser.setVisibility(View.VISIBLE);
-
-            // todo - использовать класс Chats
-            linear.addView(view_custom);
-        }
+//        linear = (LinearLayout) view.findViewById(R.id.layoutChats);
+//
+//        int user_id;
+//        JSONArray chatsArray = new JSONArray();
+//
+//        try {
+//            user_id = ClientHTTPRequests.sendGetRequest_GetUserInfo(PlayMateCache.getInstance().getToken(inflater.getContext())).getInt("user_id");
+//            chatsArray = ClientHTTPRequests.sendGetRequest_GetChatsList(PlayMateCache.getInstance().getToken(inflater.getContext()));
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
+//
+//        for (int counter = 0; counter < chatsArray.length(); counter++) {
+//            final View view_custom = getLayoutInflater().inflate(R.layout.custom_chat_element_layout, null);
+//
+//            TextView chatID = (TextView) view_custom.findViewById(R.id.chatID_TextView);
+//            try {
+//                chatID.setText(chatsArray.getJSONObject(counter).getInt("chat_id"));
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//
+//            TextView timeLastMessage = (TextView) view_custom.findViewById(R.id.timeLastMessage_textView);
+//            timeLastMessage.setText(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm")));
+//
+//            TextView nicknameTextView = (TextView) view_custom.findViewById(R.id.nickname_textView);
+//            try {
+//                nicknameTextView.setText(chatsArray.getJSONObject(counter).getInt("chat_id"));
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//
+//            LinearLayout isThisUser = (LinearLayout) view_custom.findViewById(R.id.isThisUserSendMessage_LinearLayout);
+//            LinearLayout isNoThisUser = (LinearLayout) view_custom.findViewById(R.id.isNoThisUserSendMessage_LinearLayout);
+//
+//            // todo - если user_id совпадает, то thisUser, иначе иначе
+//            isThisUser.setVisibility(View.INVISIBLE);
+//            isNoThisUser.setVisibility(View.VISIBLE);
+//
+//            // todo - использовать класс Chats
+//            linear.addView(view_custom);
+//        }
 
 //        ConstraintLayout messageDialog = (ConstraintLayout) view.findViewById(R.id.messageDialog_ConstraintLayout);
 //

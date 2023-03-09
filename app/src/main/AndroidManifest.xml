@@ -22,6 +22,7 @@
         <activity
             android:name=".ui.Activities.MainActivity"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/MyTheme">
             <intent-filter>
 <!--                <action android:name="android.intent.action.MAIN" />-->
