@@ -13,4 +13,5 @@
     <color name="background">#001220</color>
     <color name="background50percent">#001E36</color>
     <color name="blue">#2C74B3</color>
+    <color name="blue_message">#003661</color>
 </resources>

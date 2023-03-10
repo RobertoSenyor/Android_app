@@ -1,10 +1,8 @@
 package com.example.android_app.ui.Activities;
 
 import android.content.Context;
-import android.media.Image;
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.os.StrictMode;
@@ -37,11 +35,7 @@ public class ChatsFragment extends Fragment {
     private List<View> allCustomViews = new ArrayList<>();
     private JSONArray chatsArray = new JSONArray();
     private int user_id = 0;
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+    public static int selected_chat_id = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,36 +53,24 @@ public class ChatsFragment extends Fragment {
             try {
                 user_id = ClientHTTPRequests.sendGetRequest_GetUserInfo(PlayMateCache.getInstance().getToken(context)).getInt("user_id");
                 PlayMateCache.getInstance().setUserID(user_id, context);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            } catch (ParseException e) {
+            } catch (JSONException | IOException | ClassNotFoundException | ParseException e) {
                 e.printStackTrace();
             }
         }
 
         try {
             chatsArray = ClientHTTPRequests.sendGetRequest_GetChatsList(PlayMateCache.getInstance().getToken(context));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
+        } catch (JSONException | IOException | ClassNotFoundException | ParseException e) {
             e.printStackTrace();
         }
 
         // тут просто добавляем чаты в том количестве, которое есть на момент загрузки
-        for (int counter = 0; counter < chatsArray.length(); counter++) {
+        for (int counter = 0; counter < chatsArray.length(); counter++)
+        {
             final View view_custom = getLayoutInflater().inflate(R.layout.custom_chat_element_layout, null);
 
-            TextView chatID = (TextView) view_custom.findViewById(R.id.chatID_TextView);
             try {
-                chatID.setText(chatsArray.getJSONObject(counter).getInt("chat_id"));
+                view_custom.setId(chatsArray.getJSONObject(counter).getInt("id"));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -114,7 +96,8 @@ public class ChatsFragment extends Fragment {
 
         Runnable task = () ->
         {
-            for (int counter = 0; counter < chatsArray.length(); counter++) {
+            for (int counter = 0; counter < chatsArray.length(); counter++)
+            {
                 final View view_custom = allCustomViews.get(counter);
 
                 ImageView personAvatar_ImageView = (ImageView) view_custom.findViewById(R.id.person_avatar_ImageView);
@@ -135,13 +118,17 @@ public class ChatsFragment extends Fragment {
                     nickname_TextView.setText(chatsArray.getJSONObject(counter).getString("username"));
 
                     // Устанавливаем время последнего сообщения
-                    timeLastMessage_TextView.setText(LocalTime.parse(
-                            chatsArray.getJSONObject(counter).getJSONArray("last_msg").getString(1)).
-                            format(DateTimeFormatter.ofPattern("HH:mm")));
+                    if(!chatsArray.getJSONObject(counter).getJSONObject("last_msg").getString("time").isEmpty()) {
+                        timeLastMessage_TextView.setText(LocalTime.parse(
+                                        chatsArray.getJSONObject(counter).getJSONObject("last_msg").getString("time")).
+                                format(DateTimeFormatter.ofPattern("HH:mm")));
+                    }
 
                     // Устанавливаем текст последнего сообщения
-                    textLastMessage_TextView.setText(chatsArray.getJSONObject(counter).getJSONArray("last_msg").getString(0));
-                } catch (JSONException e) {
+                    if(!chatsArray.getJSONObject(counter).getJSONObject("last_msg").getString("text").isEmpty())
+                        textLastMessage_TextView.setText(chatsArray.getJSONObject(counter).getJSONObject("last_msg").getString("text"));
+                }
+                catch (JSONException e) {
                     e.printStackTrace();
                 }
             }

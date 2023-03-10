@@ -20,9 +20,10 @@
         android:id="@+id/logoutBtn"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="Button"
+        android:text="Logout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        android:background="@drawable/registration_button_border"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

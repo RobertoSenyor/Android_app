@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:importantForAutofill="noExcludeDescendants"
-    android:background="@color/background">
+    android:background="@color/background"
+    >
 
     <ImageView
         android:layout_width="match_parent"
@@ -237,9 +238,4 @@
             android:textSize="13dp"
             tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
-
-
-    <!-- TODO - сделать видимым при успешной регистрации -->
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
