@@ -10,7 +10,7 @@ import java.net.URL;
 public class ClientHTTPRequests {
 
     // TODO - поменять URL
-    public static final String hostname = "https://trifonovalex2001.fvds.ru/api_stub";
+    public static final String hostname = "https://trifonovalex2001.fvds.ru/api";
 
     /**
      * Функция возвращает true\false если пользователь с этим именем (_Username)
@@ -129,7 +129,7 @@ public class ClientHTTPRequests {
 
         try {
             JSONObject jsonObject = new JSONObject();
-            jsonObject.put("login", _Username);
+            jsonObject.put("username", _Username);
             jsonObject.put("password", _Password);
 
             String post_data = jsonObject.toString();

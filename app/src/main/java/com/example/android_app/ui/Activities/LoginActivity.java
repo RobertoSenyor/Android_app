@@ -21,16 +21,19 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
-import com.example.android_app.HTTPInteraction.ClientHTTPRequests ;
+import com.example.android_app.CacheInteraction.PlayMateCache;
+import com.example.android_app.HTTPInteraction.ClientHTTPRequests;
 import com.example.android_app.R;
 
+import org.json.JSONException;
+
+import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
 
 public class LoginActivity extends AppCompatActivity {
-
     private EditText NicknameTextField;
     private EditText PasswordTextField;
 
@@ -112,8 +115,16 @@ public class LoginActivity extends AppCompatActivity {
             // ----------------------------------------------------------------------------------------------------------
 
             // TODO - сохранение токена
-            if (sessionToken != null)
+            if (sessionToken != null) {
+                try { // кэширование токена
+                    PlayMateCache.getInstance().setToken(sessionToken.get(), LoginActivity.this.getApplicationContext());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 success_instance.getAndIncrement();
+            }
         };
         Thread thread = new Thread(task);
         thread.start();
