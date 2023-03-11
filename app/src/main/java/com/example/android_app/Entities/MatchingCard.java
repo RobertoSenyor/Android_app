@@ -29,7 +29,11 @@ public class MatchingCard {
 
         public GameCard(JSONObject gameCard) throws JSONException {
             this.coverURL = gameCard.getString("cover_url");
-            this.minutes = gameCard.getInt("minutes");
+            if (gameCard.has("minutes")) {
+                this.minutes = gameCard.getInt("minutes");
+            } else {
+                this.minutes = gameCard.getInt("playtime");
+            }
             this.gameName = gameCard.getString("name");
         }
 
@@ -57,7 +61,10 @@ public class MatchingCard {
         this.avatarURL = matchingCard.getString("avatar_url");
         this.aboutUser = matchingCard.getString("about");
         for (int i = 0; i < 3; i++) {
-            gameCards[i] = new GameCard(matchingCard.getJSONArray("top_games").getJSONObject(i));
+            if (matchingCard.has("top_games"))
+                gameCards[i] = new GameCard(matchingCard.getJSONArray("top_games").getJSONObject(i));
+            else
+                gameCards[i] = new GameCard(matchingCard.getJSONArray("game_list").getJSONObject(i));
         }
     }
 
