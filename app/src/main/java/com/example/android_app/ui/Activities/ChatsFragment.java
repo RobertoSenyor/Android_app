@@ -1,14 +1,20 @@
 package com.example.android_app.ui.Activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.StrictMode;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -21,11 +27,16 @@ import com.squareup.picasso.Picasso;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.simple.parser.ParseException;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ChatsFragment extends Fragment {
@@ -69,11 +80,14 @@ public class ChatsFragment extends Fragment {
         {
             final View view_custom = getLayoutInflater().inflate(R.layout.custom_chat_element_layout, null);
 
+            TextView chatID_TextView = (TextView) view_custom.findViewById(R.id.chat_id_TextView);
+
             try {
-                view_custom.setId(chatsArray.getJSONObject(counter).getInt("id"));
+                chatID_TextView.setText(String.valueOf(chatsArray.getJSONObject(counter).getInt("id")));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+//            chatID_TextView.setText("chatsArray.getJSONObject(counter).getInt(\"id\") " + counter);
 
             LinearLayout isThisUser = (LinearLayout) view_custom.findViewById(R.id.isThisUserSendMessage_LinearLayout);
             LinearLayout isNoThisUser = (LinearLayout) view_custom.findViewById(R.id.isNoThisUserSendMessage_LinearLayout);
@@ -89,6 +103,27 @@ public class ChatsFragment extends Fragment {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
+            Button chat_button = (Button) view_custom.findViewById(R.id.chat_button);
+
+            chat_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    selected_chat_id = Integer.parseInt(chatID_TextView.getText().toString());
+                    System.out.println(chatID_TextView.getText());
+
+                    try {
+                        // TODO - переход к нужному окну
+                        Intent intent_newView = new Intent(context, MessagingFragment.class);
+                        intent_newView.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NO_HISTORY);
+                        startActivity(intent_newView);
+                        getActivity().finish();
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
+                }
+            });
 
             allCustomViews.add(view_custom);
             linear.addView(view_custom);
@@ -119,9 +154,7 @@ public class ChatsFragment extends Fragment {
 
                     // Устанавливаем время последнего сообщения
                     if(!chatsArray.getJSONObject(counter).getJSONObject("last_msg").getString("time").isEmpty()) {
-                        timeLastMessage_TextView.setText(LocalTime.parse(
-                                        chatsArray.getJSONObject(counter).getJSONObject("last_msg").getString("time")).
-                                format(DateTimeFormatter.ofPattern("HH:mm")));
+                        timeLastMessage_TextView.setText(chatsArray.getJSONObject(counter).getJSONObject("last_msg").getString("time"));
                     }
 
                     // Устанавливаем текст последнего сообщения
@@ -136,15 +169,6 @@ public class ChatsFragment extends Fragment {
 
         Thread thread = new Thread(task);
         thread.run();
-
-//        ConstraintLayout messageDialog = (ConstraintLayout) view.findViewById(R.id.messageDialog_ConstraintLayout);
-//
-//        messageDialog.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
 
         return view;
     }
