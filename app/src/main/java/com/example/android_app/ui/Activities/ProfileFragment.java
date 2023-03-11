@@ -28,6 +28,7 @@ import com.example.android_app.R;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
@@ -87,6 +88,7 @@ public class ProfileFragment extends Fragment {
         } catch (JSONException | ParseException | ClassNotFoundException | IOException e) {
             throw new RuntimeException(e);
         }
+
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_profile, container, false);
         final Context context = inflater.getContext();
@@ -154,6 +156,7 @@ public class ProfileFragment extends Fragment {
                 .into(gameImage3);
         gameName3.setText(profileCard.getGameCards()[2].getGameName());
         gameHours3.setText(Integer.toString(profileCard.getGameCards()[2].getMinutes()));
+
 
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override

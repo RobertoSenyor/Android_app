@@ -209,7 +209,7 @@ public class ClientHTTPRequests {
 
     /**
      * Функция возвращает true\false если ссылка на профиль в Steam
-     * существует или нет соответственно
+     * занята или нет соответственно
      * @param _SteamURL String (ссылка на профиль в Steam)
      * @return boolean
      * @see <a href="https://github.com/RobertoSenyor/TFG_Documentation/blob/main/API.md#занятали-ссылка-на-профиль">GitHubURL</a>
@@ -552,8 +552,9 @@ public class ClientHTTPRequests {
     public static JSONArray sendGetRequest_GetMessagesList(Integer _ChatID, Integer _MessageID,
                                                            Integer _Count, boolean _IsNext, String _Token)
     {
+        int _isNext = _IsNext ? 1 : 0;
         String urlRequest = hostname+"/Messages/get_list?token=" + _Token + "&chat_id=" + _ChatID + "&last_id="
-                + _MessageID  + "&count=" + _Count + "&is_next=" + _IsNext;
+                + _MessageID  + "&count=" + _Count + "&is_next=" + _isNext;
 
         try {
             URL url = new URL(urlRequest);

@@ -35,6 +35,7 @@ public class PlayMateCache
     {
         PlayMateCache.isFirstBoot = true;
         PlayMateCache.Token = "";
+        PlayMateCache.user_id = 0;
     }
 
     public static PlayMateCache getInstance()
@@ -57,6 +58,7 @@ public class PlayMateCache
         JSONObject jsonCache = new JSONObject();
         jsonCache.put(key_isFirstBoot, isFirstBoot);
         jsonCache.put(key_Token, Token);
+        jsonCache.put(key_userID, user_id);
 
         // FileOutputStream:
         // false - перезапись
@@ -86,13 +88,12 @@ public class PlayMateCache
             int istart = sb.toString().indexOf("{");
             int iend = sb.toString().length();
 
-            System.out.println("\nJSONJSONJSON\n"+sb.toString().substring(istart,iend)+"\nJSONJSONJSON\n");
-
             JSONParser jsonParser = new JSONParser();
             jsonCache = new JSONObject((Map) jsonParser.parse(sb.toString().substring(istart,iend)));
 
             PlayMateCache.isFirstBoot = jsonCache.getBoolean(key_isFirstBoot);
             PlayMateCache.Token = jsonCache.getString(key_Token);
+            PlayMateCache.user_id = jsonCache.getInt(key_userID);
 
             return jsonCache;
         }
@@ -110,6 +111,7 @@ public class PlayMateCache
         JSONObject jsonCache = new JSONObject();
         jsonCache.put(key_isFirstBoot, true);
         jsonCache.put(key_Token, "");
+        jsonCache.put(key_userID, 0);
 
         // FileOutputStream:
         // false - перезапись
@@ -140,7 +142,7 @@ public class PlayMateCache
     }
 
     public void setTokenNull(Context context) throws JSONException, IOException {
-        PlayMateCache.Token=null;
+        PlayMateCache.Token="";
         saveCache(context);
     }
 

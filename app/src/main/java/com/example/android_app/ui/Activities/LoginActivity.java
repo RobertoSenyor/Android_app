@@ -89,8 +89,6 @@ public class LoginActivity extends AppCompatActivity {
 
         Runnable task = () -> {
 
-            sessionToken.set(ClientHTTPRequests.sendPostRequest_LoginUser(_Username, _Password));
-
             // Проверка имени пользователя
             // ----------------------------------------------------------------------------------------------------------
 
@@ -114,16 +112,24 @@ public class LoginActivity extends AppCompatActivity {
             // Проверк успешности регистрации
             // ----------------------------------------------------------------------------------------------------------
 
-            // TODO - сохранение токена
-            if (sessionToken != null) {
-                try { // кэширование токена
-                    PlayMateCache.getInstance().setToken(sessionToken.get(), LoginActivity.this.getApplicationContext());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                success_instance.getAndIncrement();
+
+
+                sessionToken.set(ClientHTTPRequests.sendPostRequest_LoginUser(_Username, _Password));
+
+
+            if (sessionToken.get() != null && success_instance.get() == 2)
+            {
+//                System.out.println("BBBBBBBBBBBBBBB\n"+sessionToken.get()+"\nBBBBBBBBBBBBBB");
+
+                    try { // кэширование токена
+                        PlayMateCache.getInstance().setToken(sessionToken.get(), LoginActivity.this.getApplicationContext());
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    success_instance.getAndIncrement();
             }
         };
         Thread thread = new Thread(task);

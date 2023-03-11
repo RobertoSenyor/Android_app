@@ -17,13 +17,19 @@ import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
+import com.example.android_app.CacheInteraction.PlayMateCache;
 import com.example.android_app.HTTPInteraction.ClientHTTPRequests;
 import com.example.android_app.R;
 
+import org.json.JSONException;
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
@@ -44,6 +50,8 @@ public class RegistrationActivity extends AppCompatActivity {
     private Button InPageRegistrationBtn;
     private Button ExistAccountBtn;
     private Button SocialPolicyBtn;
+
+    private ProgressBar registrationProgressBar;
 
     /**
      * короткая вибрация (50мсек)
@@ -147,7 +155,7 @@ public class RegistrationActivity extends AppCompatActivity {
             // Проверка ссылки на Steam
             // ----------------------------------------------------------------------------------------------------------
 
-            if (isExistSteamURL.get() == true && !_SteamURL.isEmpty() && URLTextField != null) {
+            if (isExistSteamURL.get() == false && !_SteamURL.isEmpty() && URLTextField != null) {
                 success_instance.getAndIncrement();
             } else {
                 URLTextField.setText("");
@@ -183,8 +191,16 @@ public class RegistrationActivity extends AppCompatActivity {
             // Проверк успешности регистрации
             // ----------------------------------------------------------------------------------------------------------
 
-            // TODO - сохранение токена
-            if (!sessionToken.get().isEmpty()) {
+            if (!sessionToken.get().isEmpty())
+            {
+                try { // кэширование токена
+                    PlayMateCache.getInstance().setToken(sessionToken.get(),RegistrationActivity.this.getApplicationContext());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
                 success_instance.getAndIncrement();
                 Thread.currentThread().interrupt();
             }
@@ -192,8 +208,13 @@ public class RegistrationActivity extends AppCompatActivity {
         Thread thread = new Thread(task);
         thread.start();
 
+        registrationProgressBar.setVisibility(View.VISIBLE);
+        InPageRegistrationBtn.setVisibility(View.INVISIBLE);
+
         while (true) {
             if (!thread.isAlive()) {
+                registrationProgressBar.setVisibility(View.INVISIBLE);
+                InPageRegistrationBtn.setVisibility(View.VISIBLE);
                 return success_instance.get() == 5 ? true : false;
             }
         }
@@ -208,7 +229,37 @@ public class RegistrationActivity extends AppCompatActivity {
 
     @SuppressLint("MissingInflatedId")
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        Context appContext = getApplicationContext();
+
+        try
+        {
+            String token = PlayMateCache.getInstance().getToken(appContext);
+
+            if (!token.equals(""))
+            {
+                try {
+                    // TODO - переход к нужному окну
+                    Intent intent_newView = new Intent(RegistrationActivity.this, MainActivity.class);
+                    intent_newView.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent_newView);
+                    finish();
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registration_page);
 
@@ -222,6 +273,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
         InPageRegistrationBtn = (Button) findViewById(R.id.InPageRegistrationBtn);
         ExistAccountBtn = (Button) findViewById(R.id.ExistAccountBtn);
+
+        registrationProgressBar = (ProgressBar) findViewById(R.id.registrationProgressBar);
 
         ExistAccountBtn.setOnClickListener(new View.OnClickListener() {
             @Override
