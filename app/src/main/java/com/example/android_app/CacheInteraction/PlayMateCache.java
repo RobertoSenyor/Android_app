@@ -101,6 +101,12 @@ public class PlayMateCache
         return null;
     }
 
+    /**
+     * Приводи кэш к первоначальному виду
+     * @param context
+     * @throws JSONException
+     * @throws IOException
+     */
     public void clearCache(Context context) throws JSONException, IOException {
         JSONObject jsonCache = new JSONObject();
         jsonCache.put(key_isFirstBoot, true);

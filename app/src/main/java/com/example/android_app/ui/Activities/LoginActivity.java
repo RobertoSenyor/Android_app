@@ -22,7 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
 import com.example.android_app.CacheInteraction.PlayMateCache;
-import com.example.android_app.HTTPInteraction.ClientHTTPRequests ;
+import com.example.android_app.HTTPInteraction.ClientHTTPRequests;
 import com.example.android_app.R;
 
 import org.json.JSONException;
@@ -34,7 +34,6 @@ import java.util.concurrent.atomic.AtomicReference;
 
 
 public class LoginActivity extends AppCompatActivity {
-
     private EditText NicknameTextField;
     private EditText PasswordTextField;
 
@@ -112,6 +111,7 @@ public class LoginActivity extends AppCompatActivity {
 
             // Проверк успешности регистрации
             // ----------------------------------------------------------------------------------------------------------
+
 
 
                 sessionToken.set(ClientHTTPRequests.sendPostRequest_LoginUser(_Username, _Password));
